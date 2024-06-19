@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  num_account: MyString
+  agency: MyString
+  string: MyString
+  status: MyString
+  balance: 9.99
+  user_id: 1
+  password: MyString
+  user: one
+
+two:
+  num_account: MyString
+  agency: MyString
+  string: MyString
+  status: MyString
+  balance: 9.99
+  user_id: 1
+  password: MyString
+  user: two
