@@ -23,4 +23,10 @@ Rails.application.routes.draw do
   put "/accounts/:id" => "accounts#update"
   delete "/accounts/:id" => "accounts#destroy"
 
+  # Address routes
+  post "/address" => "address#create"
+  get "/address" => "address#index"
+  get "/address/:id" => "address#show"
+  put "/address/:id" => "address#update"
+  delete "/address/:id" => "address#destroy"
 end
