@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   post "/users" => "users#create"
   get "/users" => "users#index"
-  get "/users/:id" => "users#show", as: :user
+  get "/users/:id" => "users#show"
   put "/users/:id" => "users#update"
   delete "/users/:id" => "users#destroy"
 end
