@@ -3,6 +3,7 @@ require_relative '../../app/services/account_service'
 require_relative '../../app/controllers/responses/account_balance'
 
 class AccountsController < ApplicationController
+    before_action :authenticate_request, only: [:create, :show, :index, :update, :getBalance]
     # Return all the accounts
     def index
         @accounts = Account.all
@@ -110,5 +111,16 @@ class AccountsController < ApplicationController
 
     def account_params
         params.require(:account).permit(:num_account, :balance, :status, :user_id, :agency, :password)
+    end
+
+    private
+    def authenticate_request
+        jwt_service = JsonWebToken.new
+        token = jwt_service.decode(request)
+        if token
+            @current_user = User.find(token[0]['user_id'])
+        else
+            render json:  { error: 'Unauthorized' }, status: :unauthorized
+        end
     end
 end

@@ -29,4 +29,12 @@ Rails.application.routes.draw do
   get "/address/:id" => "address#show"
   put "/address/:id" => "address#update"
   delete "/address/:id" => "address#destroy"
+
+  # Tranfer routes
+  post "/transfer" => "transfer#create"
+  get "/transfer" => "transfer#index"
+  get "/transfer/:id" => "transfer#show"
+
+  # Auth routes
+  post "/login" => "login#login"
 end

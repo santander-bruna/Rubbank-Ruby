@@ -4,5 +4,5 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :null_session
   
     # Skip CSRF verification for the create action in the UsersController
-    skip_before_action :verify_authenticity_token, only: [:create, :update]
+    skip_before_action :verify_authenticity_token
 end
