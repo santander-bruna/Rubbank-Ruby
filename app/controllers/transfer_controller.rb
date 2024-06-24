@@ -32,7 +32,7 @@ class TransferController < ApplicationController
                     result, status = service.transfer(@accountBeneficary, transfer)
                     render json: result, status: status
                 elsif transfer.account
-                    @accountBeneficary = Account.getByNumber(transfer_params[:account]);
+                    @accountBeneficary = Account.findByAccountNumber(transfer_params[:account]);
                     result, status = service.transfer(@accountBeneficary, transfer)
                     render json: result, status: status
                 end

@@ -49,12 +49,16 @@ gem "bootsnap", require: false
 
 gem "rest-client"
 
+gem "httparty"
+
 gem "devise"
 
 # Gemfile
 gem "dotenv"
 
 gem 'dotenv-rails'
+
+gem "debug"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

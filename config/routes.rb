@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get "/address/:id" => "address#show"
   put "/address/:id" => "address#update"
   delete "/address/:id" => "address#destroy"
+  get "/cep/:cep" => "address#search_cep"
 
   # Tranfer routes
   post "/transfer" => "transfer#create"

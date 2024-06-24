@@ -1,3 +1,6 @@
+require_relative '../../app/services/viacep_service'
+require 'rest-client'
+
 class AddressController < ApplicationController
 
     def index
@@ -49,6 +52,13 @@ class AddressController < ApplicationController
         else
             render json: { error: 'Failed to delete address' }, status: :unprocessable_entity
         end
+    end
+
+    def search_cep
+        cep = params[:cep]
+        service = ViaCepService.new
+        result = service.search_cep(cep)
+        render json: result, status: :ok
     end
 
     private

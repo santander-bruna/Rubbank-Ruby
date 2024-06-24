@@ -1,11 +1,14 @@
 class TransferService
   def transfer(beneficiaryAccount, transfer)
-    if beneficiaryAccount.status == "inativa" || beneficiaryAccount.status == "bloqueada"
+    if beneficiaryAccount.status != "active"
       return { error: "Conta do beneficiário está inativa ou bloqueada." }, :unauthorized
     end
     @payerAccount = Account.getByUserId(transfer.payer_id);
     if beneficiaryAccount.id == @payerAccount.id
       return { error: "Transferência não pode ser realizada para o próprio usuário." }, :unauthorized
+    end
+    if @payerAccount.status != "active"
+      return { error: "Conta do pagador está inativa ou bloqueada." }, :unauthorized
     end
     if @payerAccount && beneficiaryAccount && beneficiaryAccount.balance != nil && @payerAccount.balance != nil
       if transfer.amount <= 0 || transfer.amount.nil?
