@@ -1,0 +1,17 @@
+# addresses.yml
+
+one:
+  street: "123 Main St"
+  city: "Anytown"
+  state: "CA"
+  zip_code: "12345"
+  neighborhood: "Downtown"
+  user: 1
+
+two:
+  street: "456 Elm St"
+  city: "Othertown"
+  state: "NY"
+  zip_code: "54321"
+  neighborhood: "Uptown"
+  user: 2

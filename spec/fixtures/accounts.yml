@@ -1,0 +1,16 @@
+# spec/fixtures/accounts.yml
+account_1:
+  num_account: "123456789"
+  balance: 100.00
+  status: "active"
+  agency: "123"
+  password: <%= BCrypt::Password.create("password123") %>
+  user_id: 1
+
+account_2:
+  num_account: "987654321"
+  balance: 200.00
+  status: "inactive"
+  agency: "456"
+  password: <%= BCrypt::Password.create("password456") %>
+  user_id: 2

@@ -3,7 +3,6 @@
 one:
   num_account: MyString
   agency: MyString
-  string: MyString
   status: MyString
   balance: 9.99
   user_id: 1
@@ -13,9 +12,8 @@ one:
 two:
   num_account: MyString
   agency: MyString
-  string: MyString
   status: MyString
   balance: 9.99
-  user_id: 1
+  user_id: 2
   password: MyString
   user: two

@@ -1,0 +1,16 @@
+# spec/fixtures/users.yml
+user_1:
+  cpf: "12345678901"
+  name: "John Doe"
+  email: "johndoe@example.com"
+  phone: "1234567890"
+  birthdate: "1990-01-01"
+  app_password: <%= BCrypt::Password.create("password123") %>
+
+user_2:
+  cpf: "98765432109"
+  name: "Jane Smith"
+  email: "janesmith@example.com"
+  phone: "9876543210"
+  birthdate: "1985-12-31"
+  app_password: <%= BCrypt::Password.create("password456") %>
